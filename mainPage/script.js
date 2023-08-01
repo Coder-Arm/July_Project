@@ -22,7 +22,7 @@ const applyFiterBtn = document.getElementById('apply-filter');
 
 
 if(!localStorage.getItem("user")){
-  window.location.href = "/loginPage/index.html";
+  window.location.href = "./loginPage/index.html";
 }
 
 
