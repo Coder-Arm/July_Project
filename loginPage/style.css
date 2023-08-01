@@ -37,44 +37,30 @@ nav a:hover {
   background-color: rgb(66, 66, 66);
 }
 main {
-  padding: 30px;
-  position: relative;
-  width: 100vw;
-  height: 93vh;
-  overflow: hidden;
+  padding: 40px;
 }
-h2 {
-  margin-top: 20px;
-  font-size: 8vw;
+span {
+  font-size: 2vw;
 }
-#login_SignUp {
-  margin-top: 20px;
+form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-button {
-  width: 20vw;
-  padding: 8px 0;
-  cursor: pointer;
-  margin-right: 20px;
+form input {
+  padding: 8px;
   border: 1px solid black;
 }
-#login {
+form input:focus {
+  outline: none;
+}
+form button {
   background-color: black;
+  width: 20%;
+  border: none;
   color: white;
-}
-#signup {
-  background-color: white;
-  color: black;
-}
-main::after {
-  content: "";
-  background-image: url(../assets/shopping_img.png);
-  position: absolute;
-  width: 55%;
-  height: 75%;
-  scale: 1.2;
-  background-size: contain;
-  background-repeat: no-repeat;
-  top: 120px;
-  right: 0px;
-  z-index: -1;
+  padding: 8px 0;
+  cursor: pointer;
+  margin-bottom: 15px;
 }

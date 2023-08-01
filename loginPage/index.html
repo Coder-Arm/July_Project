@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left">Meshop</div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">Login</a></li>
+            <li><a href="/signupPage/index.html">Signup</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="login-container">
+        <span>Login</span>
+        <form>
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <input type="password" name="pass" id="pass" placeholder="Password" />
+          <button type="submit" id="login-btn">Login</button>
+        </form>
+      </div>
+    </main>
+    <script>
+      const email = document.getElementById("email");
+      const pass = document.getElementById("pass");
+      const form = document.querySelector("form");
+      const loginBox = document.querySelector(".login-container");
+      email.value = localStorage.getItem("email");
+      form.addEventListener("submit", (e) => {
+        if (document.querySelector(".warning"))
+          document.querySelector(".warning").style.display = "none";
+
+        e.preventDefault();
+        if (email.value.trim() === "" || pass.value.trim() === "") {
+          const warning = document.createElement("div");
+          warning.className = "warning";
+          warning.innerText = "*All fields are mandatory!";
+          loginBox.appendChild(warning);
+        } else if (
+          email.value === localStorage.getItem("email") &&
+          pass.value === localStorage.getItem("pass")
+        ) {
+          window.location.href = "/mainPage/index.html";
+        } else {
+          const warning = document.createElement("div");
+          warning.className = "warning";
+          warning.innerText = "*Incorrect email or password!";
+          loginBox.appendChild(warning);
+        }
+      });
+    </script>
+  </body>
+</html>
