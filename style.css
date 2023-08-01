@@ -67,7 +67,7 @@ button {
 }
 main::after {
   content: "";
-  background-image: url(../assets/shopping_img.png);
+  background-image: url(./assets/shopping_img.png);
   position: absolute;
   width: 55%;
   height: 75%;
