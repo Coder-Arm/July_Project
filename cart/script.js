@@ -2,7 +2,7 @@ const cartItems = document.querySelector(".cart-items");
 const itemsSummary = document.getElementById('items-summary');
 const total = document.getElementById('total');
 let items = JSON.parse(localStorage.getItem("cart"));
-console.log(items)
+// console.log(items)
 
 
 function getCartDetails(data){
