@@ -41,7 +41,7 @@ form.addEventListener('submit',(e)=>{
             userObj.password = pass.value;
             userArr.push(userObj);
             localStorage.setItem("user",JSON.stringify(userArr));
-            window.location.href = "./mainPage/index.html"
+            window.location.href = "../loginPage/index.html"
         }
          else{
         userObj.name =  fName.value+" "+lName.value;
@@ -49,7 +49,7 @@ form.addEventListener('submit',(e)=>{
         userObj.password = pass.value;
         userArr.push(userObj);
         localStorage.setItem("user",JSON.stringify(userArr));
-        window.location.href = "./mainPage/index.html";
+        window.location.href = "../loginPage/index.html";
          }
     }
 })

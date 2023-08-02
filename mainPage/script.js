@@ -21,13 +21,16 @@ const priceAbove100 = document.getElementById('range-100-above');
 const applyFiterBtn = document.getElementById('apply-filter');
 
 
-if(!localStorage.getItem("user")){
-  window.location.href = "./loginPage/index.html";
+if(!sessionStorage.getItem("currUser")){
+  window.location.href = "../loginPage/index.html";
 }
 
 
-let parsedUser = JSON.parse(localStorage.getItem("user"));
- profile.innerText = parsedUser[parsedUser.length-1].name[0].toUpperCase();
+let parsedUser = JSON.parse(sessionStorage.getItem("currUser"));
+ profile.innerText = parsedUser.name[0].toUpperCase();
+ profile.addEventListener("click",()=>{
+  window.location.href="../profilePage/index.html";
+});
 rating.addEventListener("input",()=>{
   document.getElementById('initialRatingNum').innerText = rating.value;
  })
