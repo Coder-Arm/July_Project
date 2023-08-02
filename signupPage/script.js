@@ -55,6 +55,7 @@ form.addEventListener('submit',(e)=>{
 })
     function gotUserMail(){
         const userArray = JSON.parse(localStorage.getItem("user"));
+        if(userArray === null) return false;
         for(let i = 0; i < userArray.length; i++){
             if(userArray[i].email === email.value) return true;
         }

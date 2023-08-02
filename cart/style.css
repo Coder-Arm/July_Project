@@ -148,3 +148,12 @@ h3 {
   justify-content: space-between;
   padding: 6px;
 }
+#checkout-btn {
+  margin-top: 25px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 0;
+  width: 100%;
+  cursor: pointer;
+}
