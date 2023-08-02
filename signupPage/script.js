@@ -25,10 +25,10 @@ form.addEventListener('submit',(e)=>{
         warning.innerText = "*Check your password again.";
         signupBox.appendChild(warning);
     }
-    else if(localStorage.getItem("email") === form["email"].value){
+    else if(gotUserMail()){
         const warning = document.createElement("div");
         warning.className = "warning";
-        warning.innerHTML = `*User already exists! <a href = "/loginPage/index.html">Login</a>`;
+        warning.innerHTML = `*User already exists! <a href = "../loginPage/index.html">Login</a>`;
         signupBox.appendChild(warning);
     }
     else{
@@ -53,3 +53,10 @@ form.addEventListener('submit',(e)=>{
          }
     }
 })
+    function gotUserMail(){
+        const userArray = JSON.parse(localStorage.getItem("user"));
+        for(let i = 0; i < userArray.length; i++){
+            if(userArray[i].email === email.value) return true;
+        }
+        return false;
+    }
